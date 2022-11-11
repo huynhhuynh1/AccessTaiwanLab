@@ -1,0 +1,27 @@
+<%= form_with(model: author, local: true) do |form| %>
+  <% if author.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <p><%= pluralize(author.errors.count, "error") %> prohibited this author from being saved:</p>
+
+      <ul>
+        <% author.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name, :class => 'form-label' %>
+    <%= form.text_field :name, :class => 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email, :class => 'form-label' %>
+    <%= form.text_field :email, :class => 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit :class => 'btn btn-success' %>
+  </div>
+<% end %>

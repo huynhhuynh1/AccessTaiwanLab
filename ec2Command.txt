@@ -1,0 +1,5 @@
+Connect to ec2 ssh
+ssh -i ~/.ssh/key.pem ec2-user@ec2-54.197.132.87.ap-northeast-1.compute.amazonaws.com  
+
+Download file form ec2
+scp -i ~/.ssh/key.pem ec2-user@54.197.132.87:/access.log /local/path/to/access.log
