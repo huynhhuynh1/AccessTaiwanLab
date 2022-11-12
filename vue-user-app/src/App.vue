@@ -4,6 +4,9 @@ export default {
   components: {
     User,
   },
+  created: function(){
+    this.$store.dispatch('fetch');
+  }
 };
 </script>
 

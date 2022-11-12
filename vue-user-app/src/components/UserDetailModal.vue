@@ -1,26 +1,16 @@
 <script>
-import UserService from "../services/UserService";
+import { mapState, mapGetters } from "vuex";
+
 export default {
   name: "user-detail-modal",
-  props: ["show", "username"],
+  props: ["show"],
   data() {
-    return {
-      user: null,
-      isLoading: false,
-    };
+    return {};
   },
-  methods: {
-    getUserByUsername(username) {
-      this.isLoading = true;
-      UserService.get(username).then((response) => {
-        this.isLoading = false;
-        this.user = response.data.user;
-        console.log(response.data.user);
-      });
-    },
-  },
-  mounted() {
-    this.getUserByUsername(this.username);
+  methods: {},
+  computed: {
+    ...mapState(["user", "isLoading"]),
+    ...mapGetters(["getUser"]),
   },
 };
 </script>
@@ -49,11 +39,6 @@ export default {
           </button>
         </div>
         <div class="modal-body">
-          <div class="d-flex justify-content-center" v-if="isLoading">
-            <div class="spinner-border" role="status">
-              <span class="sr-only">Loading...</span>
-            </div>
-          </div>
           <div class="user-info text-center" v-if="user">
             <img
               :src="user.avatar_url"

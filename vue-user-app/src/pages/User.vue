@@ -1,30 +1,20 @@
 <script>
 import ListUser from "../components/ListUser.vue";
-import UserService from "../services/UserService";
+import { mapState, mapGetters } from "vuex";
 
 export default {
   data() {
-    return {
-      users: [],
-      isLoading: false,
-      perPage: 20,
-    };
+    return {};
   },
   methods: {
-    getAllUser() {
-      this.isLoading = true;
-      UserService.getAll(this.perPage).then((response) => {
-        this.isLoading = false;
-        this.users = response.data.users;
-      });
-    },
     onChange(event) {
-      this.perPage = event.target.value;
-      this.getAllUser(this.perPage);
+      this.$store.dispatch('setPerPage', event.target.value);
+      this.$store.dispatch('fetch');
     },
   },
-  mounted() {
-    this.getAllUser();
+  computed: {
+    ...mapState(["isLoading", "perPage"]),
+    ...mapGetters({ users: "getUsers" }),
   },
   components: { ListUser },
 };
