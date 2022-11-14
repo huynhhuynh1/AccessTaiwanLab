@@ -1,3 +1,9 @@
-//shell script everyday at 01:00 UTC
+a. Describe the commands you’ll use and the steps you’ll take if you want to execute a
+shell script everyday at 01:00 UTC. Note that the shell script is located at
+~/script.sh.
+
+using command
 crontab -e
+
+an editor opens, then paste the below in , and open the editor.
 0 1 * * * ~/script.sh

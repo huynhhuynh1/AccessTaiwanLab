@@ -1,7 +1,10 @@
 # AccessTawan Lab Readme
-1. Implement the CRUD pages on resources articles and authors using Rails MVC functionality and fulfill the following constraints:
+
+## 2. Backend part
+### 2.1 Implement the CRUD pages on resources articles and authors using Rails MVC functionality and fulfill the following constraints:
 Bundle install 
 ```bash
+cd crud-article
 bundle install
 ```
 Migrate db
@@ -12,6 +15,14 @@ Server Start
 ```bash
 rails s
 ```
+### 2.2. Answer
+[Please view file S3Command.txt](https://github.com/huynhhuynh1/AccessTaiwanLab/blob/main/s3Command.txt).
+
+### 2.3. Answer
+[Please view file ec2Command.txt](https://github.com/huynhhuynh1/AccessTaiwanLab/blob/main/ec2Command.txt).
+
+### 2.4. Answer
+[Please view file cronTab.txt](https://github.com/huynhhuynh1/AccessTaiwanLab/blob/main/cronTab.txt).
 
 ## 3. Frontend part
 
@@ -51,6 +62,7 @@ php -S localhost:8000 -t public
 3.2 Run frontend Vue
 Install package
 ```bash
+cd vue-user-app
 npm install
 ```
 Run frontend server development

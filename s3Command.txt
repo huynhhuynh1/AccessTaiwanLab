@@ -1,11 +1,11 @@
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-unzip awscliv2.zip
-sudo ./aws/install
+a. Describe what command you'll use if you want to download index.html to your
+laptop.
 
-// Download file from s3
-// Using aws cli
+Using aws cli command download file index.html from s3 bucket
 aws s3 cp s3://my-data/index.html index.html
 
-// Put file to s3 command line
+b. Describe what command you’ll use if you have a file called hello-world.txt, and you
+want to put it onto S3 inside my-data bucket.
+Using aws cli command put file hello-world.txt from local to S3 bucket
 
 aws s3 cp /localfolder/hello-world.txt s3://my-data/
